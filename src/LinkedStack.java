@@ -1,4 +1,8 @@
 public class LinkedStack {
+    int capacity;
+    Node top = null;
+    int num_items = 0;
+
     class Stack:
             '''Implements an efficient last-in first-out Abstract Data Type using a Linked List'''
 
