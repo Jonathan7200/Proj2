@@ -41,6 +41,11 @@ public class SampleTest {
     }
 
     @Test
+    public void testFileProcessor(){
+
+    }
+
+    @Test
     public void testSampleFile() {
         BigNumArithmetic.main(new String[] { "SampleInput.txt" });
         String output = this.baos.toString();
