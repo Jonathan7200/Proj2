@@ -1,5 +1,5 @@
 import java.util.Map;
-
+//useless comment
 public class Stack {
     private int capacity;
     private Node top = null;
