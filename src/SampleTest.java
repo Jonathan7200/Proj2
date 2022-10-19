@@ -61,7 +61,7 @@ public class SampleTest {
 
     }
     @Test
-    public void testStackedList(){
+    public void testLinkedList(){
         Stack test_stack = new Stack(4);
         assertTrue(test_stack.is_empty());
         assertEquals(0, test_stack.size());//testing initial conditions, aka when its empty// havent implemented errors

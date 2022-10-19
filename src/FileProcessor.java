@@ -15,7 +15,18 @@ public class FileProcessor {
 
                 // TODO: Process each line of the input file here.
                 String line = scan.nextLine();
-                System.out.println(line);
+                for (String word : line.split("\\s+")){
+                    if(word != ""){
+
+
+
+
+
+
+                    System.out.println(word);}
+                }
+
+//                System.out.println(line);
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + infile.getPath());
