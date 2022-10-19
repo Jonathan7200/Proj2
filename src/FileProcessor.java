@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileProcessor {
-
     /**
      * Processes arithmetic expressions line-by-line in the given file.
      *
@@ -13,6 +12,7 @@ public class FileProcessor {
         File infile = new File(filePath);
         try (Scanner scan = new Scanner(infile)) {
             while (scan.hasNext()) {
+
                 // TODO: Process each line of the input file here.
                 String line = scan.nextLine();
                 System.out.println(line);
