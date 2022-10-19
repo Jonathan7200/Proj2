@@ -1,18 +1,16 @@
 public class Node {
     private Node next;
-    private int data;
+    private char data;
 
-    String math_symbol;
-
-    public int getData() {
+    public char getData() {
         return data;
     }
 
     public Node getNext() {
-        return next;
+        return this.next;
     }
 
-    public void setData(int data) {
+    public void setData(char data) {
         this.data = data;
     }
 
@@ -20,20 +18,24 @@ public class Node {
         this.next = next;
     }
 
-    public Node(int data) {
+    public Node(char data) {
         this.data = data;
         this.next = null;
     }
-  //   Node(Node next, int data);
 
-    // Node(Node next, String math_symbol);
+    public Node(char data, Node next){
+        this.data = data;
+        this.next = next;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (o == null)return false;
+        if (!(o instanceof Node))return false;
+        Node node = (Node) o;
+        if(this.data == node.getData())return true;
+        return false;
+    }
 
 
-
-
-
-   // class Node:
-  //  def __init__(self, data):
-   // self.data = data
-   // self.next = None
 }

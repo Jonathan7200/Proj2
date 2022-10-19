@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * This file contains JUnit tests for some sample arithmetic
@@ -41,7 +41,36 @@ public class SampleTest {
     }
 
     @Test
-    public void testFileProcessor(){
+    public void testNode_0(){
+        char data1 = (char)4;
+        char data2 = (char)3;
+        Node test_node_0 = new Node(data1);
+        Node test_node_1 = new Node(data2);
+        Node test_node_2 = new Node((char)4);
+
+        assertEquals(test_node_2, test_node_0);
+        assertFalse(test_node_0.equals(test_node_1));
+        assertTrue(test_node_0.equals(test_node_2));
+
+        assertEquals((char)4, test_node_0.getData());
+        assertEquals(data1, test_node_0.getData());
+        test_node_0.setNext(test_node_1);
+        assertEquals(test_node_1, test_node_0.getNext());
+        assertEquals(data2, test_node_0.getNext().getData());
+
+
+    }
+    @Test
+    public void testStackedList(){
+        Stack test_stack = new Stack(4);
+        assertTrue(test_stack.is_empty());
+        char test_data_0 = (char)4;
+        char test_data_1 = (char)3;
+        char test_data_2 = (char)6;
+        test_stack.push(test_data_0);
+        test_stack.push(test_data_1);
+        test_stack.push(test_data_2);
+
 
     }
 
