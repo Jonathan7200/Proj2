@@ -7,6 +7,7 @@ public class Stack {
     public Stack(int capacity) {
         this.capacity = capacity;
         this.top = null;
+        this.num_items = 0;
     }
     public boolean is_empty() {
         if (num_items == 0)return true;
@@ -45,13 +46,12 @@ public class Stack {
         return null;
     }
 
-//    public int peek() {
-//        if (this.is_empty() == false) {
-//            return this.top.getData();
-//        }
-//        raise IndexError //fix later
-//        return 0;
-//    }
+    public char peek() {
+        if (this.is_empty() == false) {
+            return this.top.getData();
+        }
+        return 0;
+    }
     public int size() {
         return this.num_items;
     }
