@@ -17,47 +17,80 @@ public class FileProcessor {
 
                 // TODO: Process each line of the input file here.
                 String line = scan.nextLine();
-                String operation = null;
+                String operation = "heh";
                 boolean flip = false;
-                Stack list_0
+
+//                System.out.println("testing line: " + line);
+                Stack list1 = new Stack (line.length());
+                Stack list2 = new Stack(line.length());
 
 
-            //Still not done, make sure to then split each val into its seperate ints and THEN finally add to linked list as chars
-                for (String val : line.split("\\s+")){
-                    if(val != ""){
-                        // Checking if value is an operator to flip switch to make diff list
-                        // Ex: 12 + 42 -> makes linked list [2][1],
-                        // then sees +, sets flip = true and starts making second list [2][4]
-                        if ("+^*".contains(val)){
-                            operation = val;
-                            flip = true;}
-
-                        if (flip ==false){
-                            //MAKE LIST 1
-                        }
-                        if (flip == true){
-                            //MAKE LIST 2
-                        }
-                        if(operation == "+"){
-                            ///add Helper
-                        }
-                        if (operation == "*"){
-                            //add Helper
-                        }
-                        if (operation == "^"){
-                            //add Helper
-                        }
+                if (line !="") {
+                    for (String val : line.split("\\s+")) {
 
 
+                        if (val != "") {
+                            // Checking if value is an operator to flip switch to make diff list
+                            // Ex: 12 + 42 -> makes linked list [2][1],
+                            // then sees +, sets flip = true and starts making second list [2][4]
+
+                            if ("+^*".contains(val)) {
+
+                                operation = val;
+                                //                            System.out.println("operation"+ operation);
+                                flip = true;
+                            }
+
+                            if (flip == false) {
+                                for (int i = 0; i < val.length(); i++) {
+                                    list1.push(val.charAt(i));
+                                }
+                            } else if (val != operation) {
+
+                                for (int i = 0; i < val.length(); i++) {
+                                    list2.push(val.charAt(i));
+
+                                }
+                            }
 
 
-                    System.out.println(word);}
+                        }//end of If statement, checking when a value isnt a space pretty much
+                    } //END OF FOR LOOP Testing to see if lists come out the way intended
+
+                   //Current line
+                    //System.out.println("current line: " + line);
+
+                    if(operation.equals("+")){
+                        //System.out.println("adding working");
+                        //ADD HELPER HERE USING list1 & list2 as parameters
+                    }
+                    if (operation.equals("*")){
+                        //System.out.println("mult working");
+                        //ADD HELPER HERE USING list1 & list2 as parameters
+                    }
+                    if (operation.equals("^")){
+                        //System.out.println("expo working");
+                        //ADD HELPER HERE USING list1 & list2 as parameters
+                    }
+                    //System.out.println("list1 stuff " + "size: " + list1.size()+ " top: "+ list1.peek());
+                    //System.out.println("list2 stuff " + "size: " + list2.size()+ " top: "+ list2.peek());
+
+
+
+
+
                 }
-
-//                System.out.println(line);
+                // else for when line is blank, idk what to do with this yet lol
+//                else{
+//                    System.out.println("testing for when line is blank");
+//                }
+//
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + infile.getPath());
         }
-    }
-}
+
+            catch (FileNotFoundException e) {
+                System.out.println("File not found: " + infile.getPath());
+            }
+
+        }
+        }

@@ -15,6 +15,10 @@ public class Stack {
 
     }
 
+    public Node getNext(){
+        return top.getNext();
+    }
+
     public boolean is_full() {
         if (capacity == num_items)return true;
         return false;
