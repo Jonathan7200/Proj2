@@ -60,6 +60,14 @@ public class FileProcessor {
                    //Current line
                     //System.out.println("current line: " + line);
 
+                    /**
+                     * Add helpers here,
+                     * already set up to just plop in.
+                     * Useful variables:
+                     * list1 is the first number in the line put into a list,
+                     * lis2 is the second int.
+                     * lists are stored backwards, ex. 46 -> [6][4]. List pop() removes from top and returns Node.
+                     */
                     if(operation.equals("+")){
                         //System.out.println("adding working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
