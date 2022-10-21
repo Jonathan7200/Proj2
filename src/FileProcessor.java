@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileProcessor {
@@ -76,13 +77,14 @@ public class FileProcessor {
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         //int res = add_helper(list1, list2);
                         Node res = addLists(list1, list2);
+                        ArrayList<String> temp = new ArrayList<>();
                         while (res != null)
                         {
-                            System.out.print(res.getData() +
-                                    " ");
+                            temp.add(Integer.toString(res.getData()));
                             res = res.getNext();
                         }
-                        System.out.println();
+                        String result = String.join("", temp);
+                        System.out.println(num1 + " + " + num2 + " = " + result);
 
                     }
                     if (operation.equals("*")){

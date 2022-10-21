@@ -87,6 +87,7 @@ public class SampleTest {
         BigNumArithmetic.main(new String[] { "SampleInput.txt" });
         String output = this.baos.toString();
         assertEquals("1 + 2 = 3\n" +
+                "14 + 9 = 23\n" +
                 "2 ^ 4 = 16\n" +
                 "3 * 5 = 15\n" +
                 "2 ^ 40 = 1099511627776", output);
