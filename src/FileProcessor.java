@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileProcessor {
@@ -75,17 +76,15 @@ public class FileProcessor {
                         //System.out.println("adding working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         //int res = add_helper(list1, list2);
-                        System.out.println(num1 + "+" + num2 + "");
                         Node res = addLists(list1, list2);
+                        ArrayList<String> temp = new ArrayList<>();
                         while (res != null)
                         {
-                            System.out.print(res.getData() +
-                                    " ");
-
+                            temp.add(Integer.toString(res.getData()));
                             res = res.getNext();
                         }
-                        System.out.println();
-
+                        String result = String.join("", temp);
+                        System.out.println(num1 + " + " + num2 + " = " + result);
 
                     }
                     if (operation.equals("*")){
@@ -169,10 +168,7 @@ public class FileProcessor {
     }
 
     public static int mult_helper(LinkedList list1, LinkedList list2){
-
-
-        int res = -23;
-
+        return 0;
     }
 
     public static int expo_helper(LinkedList list1, LinkedList list2){
