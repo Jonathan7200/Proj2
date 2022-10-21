@@ -17,7 +17,9 @@ public class FileProcessor {
 
                 // TODO: Process each line of the input file here.
                 String line = scan.nextLine();
-                String operation = "heh";
+                String operation = "placeholder cause java gets angry if its null";
+                int num1 = -4;
+                int num2 = -4;
                 boolean flip = false;
 
 //                System.out.println("testing line: " + line);
@@ -42,11 +44,12 @@ public class FileProcessor {
                             }
 
                             if (flip == false) {
+                                num1 = Integer.parseInt(val);
                                 for (int i = 0; i < val.length(); i++) {
                                     list1.push(val.charAt(i));
                                 }
                             } else if (val != operation) {
-
+                                num2 = Integer.parseInt(val);
                                 for (int i = 0; i < val.length(); i++) {
                                     list2.push(val.charAt(i));
 
@@ -71,14 +74,19 @@ public class FileProcessor {
                     if(operation.equals("+")){
                         //System.out.println("adding working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
+                        int res = add_helper(list1, list2);
+
                     }
                     if (operation.equals("*")){
                         //System.out.println("mult working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
+                        int res = mult_helper(list1, list2);
                     }
                     if (operation.equals("^")){
                         //System.out.println("expo working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
+                        int res = expo_helper(list1, list2);
+
                     }
                     //System.out.println("list1 stuff " + "size: " + list1.size()+ " top: "+ list1.peek());
                     //System.out.println("list2 stuff " + "size: " + list2.size()+ " top: "+ list2.peek());
@@ -98,7 +106,21 @@ public class FileProcessor {
 
             catch (FileNotFoundException e) {
                 System.out.println("File not found: " + infile.getPath());
-            }
+        }
+    }
 
-        }
-        }
+    public static int add_helper(Stack list1, Stack list2){
+
+    }
+
+    public static int mult_helper(Stack list1, Stack list2){
+
+    }
+
+    public static int expo_helper(Stack list1, Stack list2){
+
+
+    }
+
+
+}// End of class
