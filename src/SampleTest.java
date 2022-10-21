@@ -62,21 +62,21 @@ public class SampleTest {
     }
     @Test
     public void testLinkedList(){
-        Stack test_stack = new Stack(4);
-        assertTrue(test_stack.is_empty());
-        assertEquals(0, test_stack.size());//testing initial conditions, aka when its empty// havent implemented errors
+        LinkedList test_list = new LinkedList(4);
+        assertTrue(test_list.is_empty());
+        assertEquals(0, test_list.size());//testing initial conditions, aka when its empty// havent implemented errors
         //Setting stuff up for comparisons later
         char data_test_0= (char)4;
         char data_test_1 = (char)3;
         char data_test_2 = (char)6;
         Node node_test_0 = new Node(data_test_2);
 
-        test_stack.push(data_test_0);
-        test_stack.push(data_test_1);
-        test_stack.push(data_test_2);
-        assertEquals(test_stack.pop(),node_test_0);
-        assertEquals(2, test_stack.size());
-        assertEquals(data_test_1, test_stack.peek());
+        test_list.push(data_test_0);
+        test_list.push(data_test_1);
+        test_list.push(data_test_2);
+        assertEquals(test_list.pop(),node_test_0);
+        assertEquals(2, test_list.size());
+        assertEquals(data_test_1, test_list.peek());
 
 
 

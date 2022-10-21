@@ -1,10 +1,9 @@
-import java.util.Map;
 //useless comment
-public class Stack {
+public class LinkedList {
     private int capacity;
     private Node top;
     private int num_items = 0;
-    public Stack(int capacity) {
+    public LinkedList(int capacity) {
         this.capacity = capacity;
         this.top = null;
         this.num_items = 0;

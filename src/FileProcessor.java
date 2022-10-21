@@ -23,8 +23,8 @@ public class FileProcessor {
                 boolean flip = false;
 
 //                System.out.println("testing line: " + line);
-                Stack list1 = new Stack (line.length());
-                Stack list2 = new Stack(line.length());
+                LinkedList list1 = new LinkedList(line.length());
+                LinkedList list2 = new LinkedList(line.length());
 
 
                 if (line !="") {
@@ -109,17 +109,16 @@ public class FileProcessor {
         }
     }
 
-    public static int add_helper(Stack list1, Stack list2){
-
+    public static int add_helper(LinkedList list1, LinkedList list2){
+        return 0;
     }
 
-    public static int mult_helper(Stack list1, Stack list2){
-
+    public static int mult_helper(LinkedList list1, LinkedList list2){
+        return 0;
     }
 
-    public static int expo_helper(Stack list1, Stack list2){
-
-
+    public static int expo_helper(LinkedList list1, LinkedList list2){
+        return 0;
     }
 
 
