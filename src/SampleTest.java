@@ -42,17 +42,17 @@ public class SampleTest {
 
     @Test
     public void testNode_0(){
-        char data1 = (char)4;
-        char data2 = (char)3;
+        int data1 = 4;
+        int data2 = 3;
         Node test_node_0 = new Node(data1);
         Node test_node_1 = new Node(data2);
-        Node test_node_2 = new Node((char)4);
+        Node test_node_2 = new Node(4);
 
         assertEquals(test_node_2, test_node_0);
         assertFalse(test_node_0.equals(test_node_1));
         assertTrue(test_node_0.equals(test_node_2));
 
-        assertEquals((char)4, test_node_0.getData());
+        assertEquals(4, test_node_0.getData());
         assertEquals(data1, test_node_0.getData());
         test_node_0.setNext(test_node_1);
         assertEquals(test_node_1, test_node_0.getNext());
@@ -66,9 +66,9 @@ public class SampleTest {
         assertTrue(test_list.is_empty());
         assertEquals(0, test_list.size());//testing initial conditions, aka when its empty// havent implemented errors
         //Setting stuff up for comparisons later
-        char data_test_0= (char)4;
-        char data_test_1 = (char)3;
-        char data_test_2 = (char)6;
+        int data_test_0= 4;
+        int data_test_1 = 3;
+        int data_test_2 = 6;
         Node node_test_0 = new Node(data_test_2);
 
         test_list.push(data_test_0);
