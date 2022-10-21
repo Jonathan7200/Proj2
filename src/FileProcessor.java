@@ -75,14 +75,17 @@ public class FileProcessor {
                         //System.out.println("adding working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         //int res = add_helper(list1, list2);
+                        System.out.println(num1 + "+" + num2 + "");
                         Node res = addLists(list1, list2);
                         while (res != null)
                         {
                             System.out.print(res.getData() +
                                     " ");
+
                             res = res.getNext();
                         }
                         System.out.println();
+
 
                     }
                     if (operation.equals("*")){
@@ -166,7 +169,10 @@ public class FileProcessor {
     }
 
     public static int mult_helper(LinkedList list1, LinkedList list2){
-        return 0;
+
+
+        int res = -23;
+
     }
 
     public static int expo_helper(LinkedList list1, LinkedList list2){
