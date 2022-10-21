@@ -74,7 +74,15 @@ public class FileProcessor {
                     if(operation.equals("+")){
                         //System.out.println("adding working");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        int res = add_helper(list1, list2);
+                        //int res = add_helper(list1, list2);
+                        Node res = addLists(list1, list2);
+                        while (res != null)
+                        {
+                            System.out.print(res.getData() +
+                                    " ");
+                            res = res.getNext();
+                        }
+                        System.out.println();
 
                     }
                     if (operation.equals("*")){
@@ -113,7 +121,7 @@ public class FileProcessor {
         return 0;
     }
 
-    public Node addLists(LinkedList list1, LinkedList list2) {
+    public static Node addLists(LinkedList list1, LinkedList list2) {
         int carry = 0;
         Node result = null;
 
@@ -124,12 +132,12 @@ public class FileProcessor {
 
             if (!list1.is_empty())
             {
-                a = list1.pop();
+                a = list1.pop().getData();
             }
 
             if (!list2.is_empty())
             {
-                b = list2.pop();
+                b = list2.pop().getData();
             }
 
             int total = a + b + carry;
