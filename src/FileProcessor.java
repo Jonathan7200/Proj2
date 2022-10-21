@@ -113,6 +113,50 @@ public class FileProcessor {
         return 0;
     }
 
+    public Node addLists(LinkedList list1, LinkedList list2) {
+        int carry = 0;
+        Node result = null;
+
+        while (!list1.is_empty() ||
+                !list2.is_empty())
+        {
+            int a = 0, b = 0;
+
+            if (!list1.is_empty())
+            {
+                a = list1.pop();
+            }
+
+            if (!list2.is_empty())
+            {
+                b = list2.pop();
+            }
+
+            int total = a + b + carry;
+
+            Node temp = new Node(total % 10);
+            carry = total / 10;
+
+            if (result == null)
+            {
+                result = temp;
+            }
+            else
+            {
+                temp.setNext(result);
+                result = temp;
+            }
+        }
+
+        if (carry != 0)
+        {
+            Node temp = new Node(carry);
+            temp.setNext(result);
+            result = temp;
+        }
+        return result;
+    }
+
     public static int mult_helper(LinkedList list1, LinkedList list2){
         return 0;
     }
