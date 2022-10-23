@@ -77,6 +77,21 @@ public class SampleTest {
         assertEquals(test_list.pop(),node_test_0);
         assertEquals(2, test_list.size());
         assertEquals(data_test_1, test_list.peek());
+    }
+
+    @Test
+    public void testMult_helper(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(6);
+        test_list_0.push(9);
+        test_list_0.push(1);
+        assertEquals(test_list_0.peek(), 1);
+        test_list_1.push(4);
+        test_list_1.push(2);
+
+        long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
+        assertEquals(29022, res);
 
 
 

@@ -88,7 +88,7 @@ public class FileProcessor {
 
                     }
                     if (operation.equals("*")){
-                        //System.out.println("mult working");
+                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         long res = multiplyLists(list1, list2);
                         System.out.println(num1 + " * " + num2 + " = " + res);
@@ -169,16 +169,30 @@ public class FileProcessor {
     }
 
     public static int mult_helper(LinkedList list1, LinkedList list2){
-        return 0;
+        int result = -1;
+        LinkedList top = null;
+        if(list1.size() > list2.size()) {
+            top = list1;
+        }else { top = list2;}
+
+        while(list1 != null || list2 != null){
+
+        }
+
+
+
+
+
+        return result;
     }
 
     public static long multiplyLists(LinkedList list1, LinkedList list2) {
 
-        long N = 1000000000;
-        long number1 = 0;
-        long number2 = 0;
+        int N = 1000000000;
+        int number1 = 0;
+        int number2 = 0;
 
-        while (list1 != null || list2 !=  null)
+        while (!list1.is_empty() || !list2.is_empty())
         {
             if(!list1.is_empty())
             {
@@ -192,8 +206,7 @@ public class FileProcessor {
                 list2.getNext();
             }
         }
-        return (((number1 % N) *
-                (number2 % N)) % N);
+        return (((number1 % N) * (number2 % N)) % N);
     }
 
     public static int expo_helper(LinkedList list1, LinkedList list2){
