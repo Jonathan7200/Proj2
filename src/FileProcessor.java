@@ -94,9 +94,10 @@ public class FileProcessor {
                         System.out.println(num1 + " * " + num2 + " = " + res);
                     }
                     if (operation.equals("^")){
-                        //System.out.println("expo working");
+                        //System.out.println("expo running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        int res = expo_helper(list1, list2);
+                        long res = expoLists(num1, num2);
+                        System.out.println(num1 + " ^ " + num2 + " = " + res);
 
                     }
 //                    System.out.println("list1 stuff " + "size: " + list1.size()+ " top: "+ list1.peek());
@@ -118,10 +119,6 @@ public class FileProcessor {
             catch (FileNotFoundException e) {
                 System.out.println("File not found: " + infile.getPath());
         }
-    }
-
-    public static int add_helper(LinkedList list1, LinkedList list2){
-        return 0;
     }
 
     public static Node addLists(LinkedList list1, LinkedList list2) {
@@ -173,7 +170,7 @@ public class FileProcessor {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
 
-        int N = 1000000000;
+        int N = 1000000007;
         int number1 = 0;
         int number2 = 0;
 
@@ -194,9 +191,24 @@ public class FileProcessor {
         return (((number1 % N) * (number2 % N)) % N);
     }
 
-    public static int expo_helper(LinkedList list1, LinkedList list2){
-        return 0;
+    public static long expoLists(int num1, int num2) {
+        //System.out.print(list1.toString());
+        int N = 1000000007; //prime mod number
+        if (num1 == 0)
+            return 1;
+        if (num2 == 1)
+            return num1 % N;
+        long num = expoLists(num1, num2 / 2);
+        num = (num * num) % N;
+        //if exponent is even
+        if (num2 % 2 == 0) {
+            //System.out.println(num); //for testing purposes
+            return num;
+        }
+            //if exponent is odd
+        else {
+            //System.out.println(((long) ((num1 % N) * num) % N)); //for testing purposes
+            return ((long) ((num1 % N) * num) % N);
+        }
     }
-
-
 }// End of class
