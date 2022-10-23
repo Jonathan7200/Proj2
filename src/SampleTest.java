@@ -115,6 +115,41 @@ public class SampleTest {
         assertEquals(17949, res);
 
     }
+    @Test
+    public void TestMultiplyLists_3(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        test_list_0.push(1);
+        //assertEquals(test_list_0.peek(), 9);
+        test_list_1.push(1);
+        test_list_1.push(2);
+        test_list_1.push(2);
+        test_list_1.push(3);
+        test_list_1.push(3);
+        test_list_1.push(3);
+        test_list_1.push(4);
+        test_list_1.push(4);
+        test_list_1.push(4);
+        test_list_1.push(4);
+        test_list_1.push(4);
+        test_list_1.push(5);
+        test_list_1.push(5);
+        test_list_1.push(5);
+        test_list_1.push(5);
+        test_list_1.push(5);
+
+        long res = FileProcessor.multiplyLists(test_list_1, test_list_0);
+        assertEquals(1.3592605E22, res);
+
+    }
 
     @Test
     public void TestMultiplyLists_2(){
