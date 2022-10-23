@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -126,6 +127,86 @@ public class SampleTest {
 
         long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
         assertEquals(24, res);
+
+    }
+
+    @Test
+    public void testAddLists1(){ //fails with large number
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(1);
+        test_list_0.push(2);
+        test_list_0.push(3);
+        test_list_0.push(4);
+        test_list_0.push(5);
+        test_list_0.push(6);
+        test_list_0.push(7);
+        test_list_0.push(8);
+        test_list_0.push(9);
+        test_list_0.push(0);
+        test_list_1.push(9);
+        test_list_1.push(8);
+        test_list_1.push(7);
+        test_list_1.push(6);
+        test_list_1.push(5);
+        test_list_1.push(4);
+        test_list_1.push(3);
+        test_list_1.push(2);
+        test_list_1.push(1);
+
+        Node res = FileProcessor.addLists(test_list_0, test_list_1);
+        ArrayList<String> temp = new ArrayList<>();
+        while (res != null)
+        {
+            temp.add(Integer.toString(res.getData()));
+            res = res.getNext();
+        }
+        String result = String.join("", temp);
+        assertEquals("2222222211", result);
+
+    }
+
+    @Test
+    public void testAddLists2(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(5);
+        test_list_0.push(7);
+        test_list_0.push(9);
+        assertEquals(test_list_0.peek(), 9);
+        test_list_1.push(3);
+        test_list_1.push(1);
+
+        Node res = FileProcessor.addLists(test_list_0, test_list_1);
+        ArrayList<String> temp = new ArrayList<>();
+        while (res != null)
+        {
+            temp.add(Integer.toString(res.getData()));
+            res = res.getNext();
+        }
+        String result = String.join("", temp);
+        assertEquals("610", result);
+
+    }
+
+    @Test
+    public void testAddLists3(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(6);
+
+        assertEquals(test_list_0.peek(), 6);
+        test_list_1.push(4);
+
+        Node res = FileProcessor.addLists(test_list_0, test_list_1);
+        ArrayList<String> temp = new ArrayList<>();
+        while (res != null)
+        {
+            temp.add(Integer.toString(res.getData()));
+            res = res.getNext();
+        }
+        String result = String.join("", temp);
+        assertEquals("10", result);
 
     }
 
