@@ -88,7 +88,7 @@ public class FileProcessor {
 
                     }
                     if (operation.equals("*")){
-                        System.out.println("mult running");
+//                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         long res = multiplyLists(list1, list2);
                         System.out.println(num1 + " * " + num2 + " = " + res);
