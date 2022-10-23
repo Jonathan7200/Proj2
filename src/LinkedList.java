@@ -37,6 +37,17 @@ public class LinkedList {
 //        raise indexError //fix later, too lazy to look up java how to raise error
     }
 
+    public void push(Node node){
+        if (this.is_empty() == true){
+            this.top = node;
+        }
+        if (this.is_full() == false) {
+            node.setNext(this.top);
+            this.top = node;
+            this.num_items += 1;
+        }
+    }
+
     public Node pop() {
         if (this.is_empty() == false) {
 //            char top_val = this.top.getData(); //Y No Work??
@@ -59,4 +70,12 @@ public class LinkedList {
         return this.num_items;
     }
 
+    public LinkedList fliplist(){
+        LinkedList flipped = new LinkedList(this.size());
+        while(!this.is_empty()){
+            flipped.push(this.pop());
+        }
+        return flipped;
+    }
 }
+

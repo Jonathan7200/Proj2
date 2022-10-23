@@ -88,10 +88,12 @@ public class FileProcessor {
 
                     }
                     if (operation.equals("*")){
-                        //System.out.println("mult working");
+                        System.out.println("mult runnning");
                         //ADD HELPER HERE USING list1 & list2 as parameters
+
                         long res = multiplyLists(list1, list2);
                         System.out.println(num1 + " * " + num2 + " = " + res);
+                        System.out.println(res);
                     }
                     if (operation.equals("^")){
                         //System.out.println("expo working");
@@ -173,6 +175,9 @@ public class FileProcessor {
     }
 
     public static long multiplyLists(LinkedList list1, LinkedList list2) {
+        list1.fliplist();
+        list2.fliplist();
+
 
         long N = 1000000000;
         long number1 = 0;

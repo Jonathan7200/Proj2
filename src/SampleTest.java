@@ -74,9 +74,17 @@ public class SampleTest {
         test_list.push(data_test_0);
         test_list.push(data_test_1);
         test_list.push(data_test_2);
+        System.out.print(test_list.peek());
+        System.out.println("hi");
         assertEquals(test_list.pop(),node_test_0);
         assertEquals(2, test_list.size());
+        System.out.println(test_list.peek());
+
         assertEquals(data_test_1, test_list.peek());
+        test_list.fliplist();
+        System.out.println(test_list.peek());
+
+
 
 
 
