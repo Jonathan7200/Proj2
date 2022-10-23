@@ -74,13 +74,17 @@ public class SampleTest {
         test_list.push(data_test_0);
         test_list.push(data_test_1);
         test_list.push(data_test_2);
+
         assertEquals(test_list.pop(),node_test_0);
         assertEquals(2, test_list.size());
         assertEquals(data_test_1, test_list.peek());
+        LinkedList flipped = test_list.flip();
+        assertEquals(flipped.peek(), 4);
+
     }
 
     @Test
-    public void testMult_helper(){
+    public void TestMultiplyLists_0(){
         LinkedList test_list_0 = new LinkedList(6);
         LinkedList test_list_1 = new LinkedList(5);
         test_list_0.push(6);
@@ -93,9 +97,39 @@ public class SampleTest {
         long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
         assertEquals(29022, res);
 
+    }
 
+    @Test
+    public void TestMultiplyLists_1(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(5);
+        test_list_0.push(7);
+        test_list_0.push(9);
+        assertEquals(test_list_0.peek(), 9);
+        test_list_1.push(3);
+        test_list_1.push(1);
+
+        long res = FileProcessor.multiplyLists(test_list_1, test_list_0);
+        assertEquals(17949, res);
 
     }
+
+    @Test
+    public void TestMultiplyLists_2(){
+        LinkedList test_list_0 = new LinkedList(6);
+        LinkedList test_list_1 = new LinkedList(5);
+        test_list_0.push(6);
+
+        assertEquals(test_list_0.peek(), 6);
+        test_list_1.push(4);
+
+        long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
+        assertEquals(24, res);
+
+    }
+
+
 
     @Test
     public void testSampleFile() {

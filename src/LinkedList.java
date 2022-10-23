@@ -59,4 +59,13 @@ public class LinkedList {
         return this.num_items;
     }
 
+    public LinkedList flip(){
+        LinkedList result = new LinkedList(this.size());
+        while(!this.is_empty()){
+            result.push(this.pop().getData());
+        }
+
+        return result;
+    }
+
 }

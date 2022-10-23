@@ -168,42 +168,27 @@ public class FileProcessor {
         return result;
     }
 
-    public static int mult_helper(LinkedList list1, LinkedList list2){
-        int result = -1;
-        LinkedList top = null;
-        if(list1.size() > list2.size()) {
-            top = list1;
-        }else { top = list2;}
 
-        while(list1 != null || list2 != null){
-
-        }
-
-
-
-
-
-        return result;
-    }
-
-    public static long multiplyLists(LinkedList list1, LinkedList list2) {
+    public static long multiplyLists(LinkedList list0, LinkedList list1) {
+        LinkedList temp0 = list0.flip();
+        LinkedList temp1 = list1.flip();
 
         int N = 1000000000;
         int number1 = 0;
         int number2 = 0;
 
-        while (!list1.is_empty() || !list2.is_empty())
+        while (!temp0.is_empty() || !temp1.is_empty())
         {
-            if(!list1.is_empty())
+            if(!temp0.is_empty())
             {
-                number1 = (((number1) * 10) % N + list1.pop().getData());
-                list1.getNext();
+                number1 = (((number1) * 10) % N + temp0.pop().getData());
+                temp0.getNext();
             }
 
-            if(!list2.is_empty())
+            if(!temp1.is_empty())
             {
-                number2 = (((number2) * 10) % N + list2.pop().getData());
-                list2.getNext();
+                number2 = (((number2) * 10) % N + temp1.pop().getData());
+                temp1.getNext();
             }
         }
         return (((number1 % N) * (number2 % N)) % N);
