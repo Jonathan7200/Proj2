@@ -117,8 +117,8 @@ public class SampleTest {
     }
     @Test
     public void TestMultiplyLists_3(){
-        LinkedList test_list_0 = new LinkedList(6);
-        LinkedList test_list_1 = new LinkedList(5);
+        LinkedList test_list_0 = new LinkedList(9);
+        LinkedList test_list_1 = new LinkedList(16);
         test_list_0.push(1);
         test_list_0.push(1);
         test_list_0.push(1);
@@ -167,8 +167,8 @@ public class SampleTest {
 
     @Test
     public void testAddLists1(){ //fails with large number
-        LinkedList test_list_0 = new LinkedList(6);
-        LinkedList test_list_1 = new LinkedList(5);
+        LinkedList test_list_0 = new LinkedList(10);
+        LinkedList test_list_1 = new LinkedList(9);
         test_list_0.push(1);
         test_list_0.push(2);
         test_list_0.push(3);

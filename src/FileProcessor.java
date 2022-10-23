@@ -170,9 +170,9 @@ public class FileProcessor {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
 
-        int N = 1000000007;
-        int number1 = 0;
-        int number2 = 0;
+        long N = 1000000007;
+        long number1 = 0;
+        long number2 = 0;
 
         while (!temp0.is_empty() || !temp1.is_empty())
         {
