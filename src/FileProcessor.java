@@ -90,10 +90,10 @@ public class FileProcessor {
                     if (operation.equals("*")){
 //                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        //long res = multiplyLists(list1, list2);
-                        //System.out.println(num1 + " * " + num2 + " = " + res);
-                        LinkedList res  = multiList2(list1, list2);
-                        System.out.println(num1 + " + " + num2 + " = " + res.numify());
+                        long res = multiplyLists(list1, list2);
+                        System.out.println(num1 + " * " + num2 + " = " + res);
+                        //LinkedList res  = multiList2(list1, list2);
+                        //System.out.println(num1 + " + " + num2 + " = " + res.numify());
 
                     }
                     if (operation.equals("^")){
@@ -167,7 +167,7 @@ public class FileProcessor {
         }
         return result;
     }
-
+/* Failure + works worse, i believe
 public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
     LinkedList number1 = list1.flip();
     LinkedList number2 = list2.flip();
@@ -214,6 +214,7 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
     }
     return result;
 }
+ */
     public static long multiplyLists(LinkedList list0, LinkedList list1) {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
