@@ -80,7 +80,7 @@ public class FileProcessor {
                         ArrayList<String> temp = new ArrayList<>();
                         while (res != null)
                         {
-                            temp.add(Integer.toString(res.getData()));
+                            temp.add(Long.toString(res.getData()));
                             res = res.getNext();
                         }
                         String result = String.join("", temp);
@@ -122,13 +122,13 @@ public class FileProcessor {
     }
 
     public static Node addLists(LinkedList list1, LinkedList list2) {
-        int carry = 0;
+        long carry = 0;
         Node result = null;
 
         while (!list1.is_empty() ||
                 !list2.is_empty())
         {
-            int a = 0, b = 0;
+            long a = 0, b = 0;
 
             if (!list1.is_empty())
             {
@@ -140,7 +140,7 @@ public class FileProcessor {
                 b = list2.pop().getData();
             }
 
-            int total = a + b + carry;
+            long total = a + b + carry;
 
             Node temp = new Node(total % 10);
             carry = total / 10;

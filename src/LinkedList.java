@@ -23,7 +23,7 @@ public class LinkedList {
         return false;
     }
 
-    public void push(int data) {
+    public void push(long data) {
         Node node = new Node(data);
         if (this.is_empty() == true){
             this.top = node;
@@ -49,7 +49,7 @@ public class LinkedList {
         return null;
     }
 
-    public int peek() {
+    public long peek() {
         if (this.is_empty() == false) {
             return this.top.getData();
         }

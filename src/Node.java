@@ -1,8 +1,8 @@
 public class Node {
     private Node next;
-    private int data;
+    private long data;
 
-    public int getData() {
+    public long getData() {
         return data;
     }
 
@@ -10,7 +10,7 @@ public class Node {
         return this.next;
     }
 
-    public void setData(int data) {
+    public void setData(long data) {
         this.data = data;
     }
 
@@ -18,7 +18,7 @@ public class Node {
         this.next = next;
     }
 
-    public Node(int data) {
+    public Node(long data) {
         this.data = data;
         this.next = null;
     }

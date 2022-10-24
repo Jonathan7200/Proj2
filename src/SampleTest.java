@@ -193,7 +193,7 @@ public class SampleTest {
         ArrayList<String> temp = new ArrayList<>();
         while (res != null)
         {
-            temp.add(Integer.toString(res.getData()));
+            temp.add(Long.toString(res.getData()));
             res = res.getNext();
         }
         String result = String.join("", temp);
@@ -216,7 +216,7 @@ public class SampleTest {
         ArrayList<String> temp = new ArrayList<>();
         while (res != null)
         {
-            temp.add(Integer.toString(res.getData()));
+            temp.add(Long.toString(res.getData()));
             res = res.getNext();
         }
         String result = String.join("", temp);
@@ -237,7 +237,7 @@ public class SampleTest {
         ArrayList<String> temp = new ArrayList<>();
         while (res != null)
         {
-            temp.add(Integer.toString(res.getData()));
+            temp.add(Long.toString(res.getData()));
             res = res.getNext();
         }
         String result = String.join("", temp);
