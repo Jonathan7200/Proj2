@@ -172,15 +172,18 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
     LinkedList number1 = list1.flip();
     LinkedList number2 = list2.flip();
 
+        long carry = 0;
+        Node list1Node = number1.getTop();
+
     LinkedList result = new LinkedList(number1.size() + number2.size() + 1);
 
     Node list2Node = number2.getTop();
     Node resNode = result.getTop();
 
     while (list2Node.getNext() != null) {
-        long carry = 0;
+        carry = 0;
         list2Node = resNode;
-        Node list1Node = number1.getTop();
+        list1Node = number1.getTop();
     }
 
     while (list1Node.getNext() != null) {
@@ -219,7 +222,7 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
 
-        long N = 1000000007L;
+        long N = 8717861568456214667l;
         long number1 = 0L;
         long number2 = 0L;
 
