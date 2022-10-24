@@ -90,8 +90,11 @@ public class FileProcessor {
                     if (operation.equals("*")){
 //                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        long res = multiplyLists(list1, list2);
-                        System.out.println(num1 + " * " + num2 + " = " + res);
+                        //long res = multiplyLists(list1, list2);
+                        //System.out.println(num1 + " * " + num2 + " = " + res);
+                        LinkedList res  = multiList2(list1, list2);
+                        System.out.println(num1 + " + " + num2 + " = " + res.numify());
+
                     }
                     if (operation.equals("^")){
                         //System.out.println("expo running");
@@ -165,14 +168,59 @@ public class FileProcessor {
         return result;
     }
 
+public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
+    LinkedList number1 = list1.flip();
+    LinkedList number2 = list2.flip();
 
+    LinkedList result = new LinkedList(number1.size() + number2.size() + 1);
+
+    Node list2Node = number2.getTop();
+    Node resNode = result.getTop();
+
+    while (list2Node.getNext() != null) {
+        long carry = 0;
+        list2Node = resNode;
+        Node list1Node = number1.getTop();
+    }
+
+    while (list1Node.getNext() != null) {
+
+        long mult = ((list1Node.getData()) * (list2Node.getData()) + carry);
+
+
+        resNode.setData(resNode.getData() + mult % 10);
+
+
+        carry = ((mult / 10) + (resNode.getData() / 10));
+        resNode.setData(resNode.getData() % 10);
+
+        list1Node = list1Node.getNext();
+        resNode = resNode.getNext();
+    }
+    if (carry > 0):
+    resNode.setData(resNode.getData() + carry);
+    resNode = resNode.getNext();
+    list2Node = list2Node.getNext();
+
+    result = result.flip();
+    list1 = list1.flip();
+    list2 = list2.flip();
+
+
+    Node start = result.getTop();
+    while (start.getData() == 0) {
+        result.setTop(start.getNext());
+        start = start.getNext();
+    }
+    return result;
+}
     public static long multiplyLists(LinkedList list0, LinkedList list1) {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
 
-        long N = 1000000007;
-        long number1 = 0;
-        long number2 = 0;
+        long N = 1000000007L;
+        long number1 = 0L;
+        long number2 = 0L;
 
         while (!temp0.is_empty() || !temp1.is_empty())
         {
