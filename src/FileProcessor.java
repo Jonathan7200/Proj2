@@ -302,7 +302,32 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         System.out.println("Result stored as BigInteger");
         return res.toString();
     }
+    public static String expoLists_test(int num1, int num2) {
 
+        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
+        BigInteger number1 = new BigInteger("0");
+        BigInteger number2 = new BigInteger("0");
+
+        BigInteger result = new BigInteger("0");
+
+        if (number1.equals(BigInteger.valueOf(0)))
+            result = BigInteger.valueOf(1);
+        if (number1.equals(BigInteger.valueOf(1)))
+            result = number1.mod(N);
+        BigInteger num = expoLists_test(BigInteger.valueOf(number1), BigInteger.valueOf(number2.divide((2)))); //you can see the issue here, idk how to convert this
+        num = (num.multiply(num)).mod(N);
+        //if exponent is even
+        if (number2.mod(BigInteger.valueOf(2)).equals(0)) {
+            result = num;
+        }
+        //if exponent is odd
+        else {
+            result = (((number1.mod(N)).multiply(num).mod(N)));
+        }
+
+        System.out.println("Result stored as BigInteger");
+        return result.toString();
+    }
     public static long expoLists(int num1, int num2) {
         //System.out.print(list1.toString());
         long N = 8717861568456214667l; //prime mod number

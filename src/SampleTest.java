@@ -292,6 +292,12 @@ public class SampleTest {
         assertEquals(1, res);
 
     }
+    @Test
+    public void testExpoLists5(){
+        long res = FileProcessor.expoLists(10, 50);
+        assertEquals("100000000000000000000000000000000000000000000000000", Long.toString(res));
+
+    }
 
     /**
      * Gets called after each test method. Need to do this so that we are
