@@ -13,6 +13,7 @@ public class FileProcessor {
 
     public static void processFile(String filePath) {
         File infile = new File(filePath);
+        ArrayList<String> output = new ArrayList<>();
         try (Scanner scan = new Scanner(infile)) {
             while (scan.hasNext()) {
 
@@ -26,7 +27,6 @@ public class FileProcessor {
 //                System.out.println("testing line: " + line);
                 LinkedList list1 = new LinkedList(line.length());
                 LinkedList list2 = new LinkedList(line.length());
-
 
 
                 if (line !="") {
@@ -85,14 +85,17 @@ public class FileProcessor {
                             res = res.getNext();
                         }
                         String result = String.join("", temp);
-                        System.out.println(num1 + " + " + num2 + " = " + result);
+                        String stepString = (num1 + " + " + num2 + " = " + result);
+                        output.add(stepString);
 
                     }
                     if (operation.equals("*")){
 //                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         long res = multiplyLists(list1, list2);
-                        System.out.println(num1 + " * " + num2 + " = " + res);
+                        //System.out.println(num1 + " * " + num2 + " = " + res);
+                        String stepString = (num1 + " * " + num2 + " = " + res);
+                        output.add(stepString);
                         //LinkedList res  = multiList2(list1, list2);
                         //System.out.println(num1 + " + " + num2 + " = " + res.numify());
 
@@ -101,11 +104,13 @@ public class FileProcessor {
                         //System.out.println("expo running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         long res = expoLists(num1, num2);
-                        System.out.println(num1 + " ^ " + num2 + " = " + res);
+                        //System.out.println(num1 + " ^ " + num2 + " = " + res);
+                        String stepString = (num1 + " ^ " + num2 + " = " + res);
+                        output.add(stepString);
+
                     }
 //                    System.out.println("list1 stuff " + "size: " + list1.size()+ " top: "+ list1.peek());
 //                    System.out.println("list2 stuff " + "size: " + list2.size()+ " top: "+ list2.peek());
-
 
 
 
@@ -115,18 +120,16 @@ public class FileProcessor {
 //                else{
 //                    System.out.println("testing for when line is blank");
 //                }
-
-
+//
             }
-
-
         }
-
-
-
 
             catch (FileNotFoundException e) {
                 System.out.println("File not found: " + infile.getPath());
+        }
+        for (int i = 0; i < output.size(); i++) {
+            System.out.print(output.get(i));
+            if (i != output.size()-1) {System.out.print("\n");}
         }
     }
 
