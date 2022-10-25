@@ -167,13 +167,13 @@ public class FileProcessor {
         }
         return result;
     }
-/* Failure + works worse, i believe
+/*
 public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
     LinkedList number1 = list1.flip();
     LinkedList number2 = list2.flip();
 
-        long carry = 0;
-        Node list1Node = number1.getTop();
+    long carry = 0;
+    Node list1Node = number1.getTop();
 
     LinkedList result = new LinkedList(number1.size() + number2.size() + 1);
 
@@ -200,8 +200,8 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         list1Node = list1Node.getNext();
         resNode = resNode.getNext();
     }
-    if (carry > 0):
-    resNode.setData(resNode.getData() + carry);
+    if (carry > 0) {
+    resNode.setData(resNode.getData() + carry); }
     resNode = resNode.getNext();
     list2Node = list2Node.getNext();
 
@@ -217,7 +217,9 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
     }
     return result;
 }
+
  */
+
     public static long multiplyLists(LinkedList list0, LinkedList list1) {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
@@ -245,7 +247,7 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
 
     public static long expoLists(int num1, int num2) {
         //System.out.print(list1.toString());
-        int N = 1000000007; //prime mod number
+        long N = 8717861568456214667l; //prime mod number
         if (num1 == 0)
             return 1;
         if (num2 == 1)

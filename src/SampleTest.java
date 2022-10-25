@@ -81,6 +81,11 @@ public class SampleTest {
         assertEquals(data_test_1, test_list.peek());
         LinkedList flipped = test_list.flip();
         assertEquals(flipped.peek(), 4);
+        LinkedList testNull = new LinkedList(1);
+        assertEquals(0,testNull.peek());
+        assertEquals(null,testNull.pop());
+        testNull.push(1);
+
 
     }
 
@@ -165,6 +170,22 @@ public class SampleTest {
 
     }
 
+
+
+    @Test
+    public void testSampleFile() {
+        BigNumArithmetic.main(new String[] { "SampleInput.txt" });
+        String output = this.baos.toString();
+        assertEquals("1 + 2 = 3\n" +
+                "14 + 9 = 23\n" +
+                "2 ^ 4 = 16\n" +
+                "3 * 5 = 15\n" +
+                "2 ^ 40 = 1099511627776", output);
+    }
+    @Test
+    public void testMethod() throws Exception {
+        BigNumArithmetic.main(new String[] { "balh.txt" });
+    }
     @Test
     public void testAddLists1(){ //fails with large number
         LinkedList test_list_0 = new LinkedList(10);
@@ -244,18 +265,31 @@ public class SampleTest {
         assertEquals("10", result);
 
     }
+    @Test
+    public void testExpoLists1(){
+        long res = FileProcessor.expoLists(6, 4);
+        assertEquals(1296, res);
 
-
+    }
 
     @Test
-    public void testSampleFile() {
-        BigNumArithmetic.main(new String[] { "SampleInput.txt" });
-        String output = this.baos.toString();
-        assertEquals("1 + 2 = 3\n" +
-                "14 + 9 = 23\n" +
-                "2 ^ 4 = 16\n" +
-                "3 * 5 = 15\n" +
-                "2 ^ 40 = 1099511627776", output);
+    public void testExpoLists2(){
+        long res = FileProcessor.expoLists(30, 5);
+        assertEquals(24300000, res);
+
+    }
+
+    @Test
+    public void testExpoLists3(){
+        long res = FileProcessor.expoLists(235, 4);
+        assertEquals("3049800625", Long.toString(res));
+
+    }
+    @Test
+    public void testExpoLists4(){
+        long res = FileProcessor.expoLists(0, 4);
+        assertEquals(1, res);
+
     }
 
     /**

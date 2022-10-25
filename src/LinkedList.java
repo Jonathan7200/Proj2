@@ -2,14 +2,17 @@
 public class LinkedList {
     private int capacity;
     private Node top;
-
+/*
     public Node getTop() {
         return top;
     }
 
+
     public void setTop(Node top) {
         this.top = top;
     }
+
+ */
 
     private int num_items = 0;
     public LinkedList(int capacity) {
@@ -76,6 +79,7 @@ public class LinkedList {
 
         return result;
     }
+    /*
     public String numify(){
         String result = null;
         while(!this.is_empty()){
@@ -84,5 +88,7 @@ public class LinkedList {
 
         return result;
     }
+
+     */
 
 }
