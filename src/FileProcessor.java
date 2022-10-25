@@ -28,6 +28,7 @@ public class FileProcessor {
                 LinkedList list2 = new LinkedList(line.length());
 
 
+
                 if (line !="") {
                     for (String val : line.split("\\s+")) {
 
@@ -101,7 +102,6 @@ public class FileProcessor {
                         //ADD HELPER HERE USING list1 & list2 as parameters
                         long res = expoLists(num1, num2);
                         System.out.println(num1 + " ^ " + num2 + " = " + res);
-
                     }
 //                    System.out.println("list1 stuff " + "size: " + list1.size()+ " top: "+ list1.peek());
 //                    System.out.println("list2 stuff " + "size: " + list2.size()+ " top: "+ list2.peek());
@@ -115,9 +115,15 @@ public class FileProcessor {
 //                else{
 //                    System.out.println("testing for when line is blank");
 //                }
-//
+
+
             }
+
+
         }
+
+
+
 
             catch (FileNotFoundException e) {
                 System.out.println("File not found: " + infile.getPath());
