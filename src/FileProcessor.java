@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -252,6 +253,54 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
             }
         }
         return (((number1 % N) * (number2 % N)) % N);
+    }
+
+    public static String multiplyLists_test(LinkedList list1, LinkedList list0) {
+        LinkedList temp_list0 = list0.flip();
+        LinkedList temp_list1 = list1.flip();
+        System.out.println("test");
+
+        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
+        BigInteger number1 = new BigInteger("0");
+        BigInteger number2 = new BigInteger("0");
+
+        while (!temp_list0.is_empty() || !temp_list1.is_empty())
+        {
+            System.out.println("test");
+            if(!temp_list0.is_empty())
+            {
+
+                BigInteger temp_0 = number1.multiply(BigInteger.valueOf(10));
+                BigInteger temp_node = BigInteger.valueOf(temp_list0.pop().getData());
+                BigInteger temp_0_into_mod = temp_0.mod(N);
+                number1 = temp_0_into_mod.add(temp_node);
+
+
+
+//                number1 = (  (  (number1) * 10) % N + temp0.pop().getData()  );
+                temp_list0.getNext();
+            }
+
+            if(!temp_list1.is_empty())
+            {
+                BigInteger temp_0 = number2.multiply(BigInteger.valueOf(10));
+                BigInteger temp_node = BigInteger.valueOf(temp_list1.pop().getData());
+                BigInteger temp_0_into_mod = temp_0.mod(N);
+                number2 = temp_0_into_mod.add(temp_node);
+
+//                number2 = (((number2) * 10) % N + temp1.pop().getData());
+                temp_list1.getNext();
+            }
+        }
+        BigInteger num_1 = number1.mod(N);
+        BigInteger num_2 = number2.mod(N);
+        BigInteger res = num_1.multiply(num_2);
+        res = res.mod(N);
+
+//        return (((number1 % N) * (number2 % N)) % N);
+
+        System.out.println("Result stored as BigInteger");
+        return res.toString();
     }
 
     public static long expoLists(int num1, int num2) {

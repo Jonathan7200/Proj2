@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -116,8 +117,8 @@ public class SampleTest {
         test_list_1.push(3);
         test_list_1.push(1);
 
-        long res = FileProcessor.multiplyLists(test_list_1, test_list_0);
-        assertEquals(17949, res);
+        String res = FileProcessor.multiplyLists_test(test_list_1, test_list_0);
+        assertEquals("17949", res);
 
     }
     @Test
@@ -144,15 +145,15 @@ public class SampleTest {
         test_list_1.push(4);
         test_list_1.push(4);
         test_list_1.push(4);
-        test_list_1.push(4);
         test_list_1.push(5);
         test_list_1.push(5);
         test_list_1.push(5);
         test_list_1.push(5);
         test_list_1.push(5);
 
-        long res = FileProcessor.multiplyLists(test_list_1, test_list_0);
-        assertEquals(1.3592605E22, res);
+        String res = FileProcessor.multiplyLists_test(test_list_1, test_list_0);
+
+        assertEquals("13592604925913506171605", res);
 
     }
 
