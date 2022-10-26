@@ -94,7 +94,7 @@ public class FileProcessor {
                     if (operation.equals("*")){
 //                        System.out.println("mult running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        long res = multiplyLists(list1, list2);
+                        String res = multiplyLists_test(list1, list2);
                         //System.out.println(num1 + " * " + num2 + " = " + res);
                         String stepString = (num1 + " * " + num2 + " = " + res);
                         output.add(stepString);
@@ -105,7 +105,7 @@ public class FileProcessor {
                     if (operation.equals("^")){
                         //System.out.println("expo running");
                         //ADD HELPER HERE USING list1 & list2 as parameters
-                        long res = expoLists(num1, num2);
+                        String res = expoLists_1(Integer.toString(num1), Integer.toString(num2));
                         //System.out.println(num1 + " ^ " + num2 + " = " + res);
                         String stepString = (num1 + " ^ " + num2 + " = " + res);
                         output.add(stepString);
@@ -118,11 +118,7 @@ public class FileProcessor {
 
 
                 }
-                // else for when line is blank, idk what to do with this yet lol
-//                else{
-//                    System.out.println("testing for when line is blank");
-//                }
-//
+
             }
         }
 
@@ -178,59 +174,7 @@ public class FileProcessor {
         }
         return result;
     }
-/*
-public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
-    LinkedList number1 = list1.flip();
-    LinkedList number2 = list2.flip();
-
-    long carry = 0;
-    Node list1Node = number1.getTop();
-
-    LinkedList result = new LinkedList(number1.size() + number2.size() + 1);
-
-    Node list2Node = number2.getTop();
-    Node resNode = result.getTop();
-
-    while (list2Node.getNext() != null) {
-        carry = 0;
-        list2Node = resNode;
-        list1Node = number1.getTop();
-    }
-
-    while (list1Node.getNext() != null) {
-
-        long mult = ((list1Node.getData()) * (list2Node.getData()) + carry);
-
-
-        resNode.setData(resNode.getData() + mult % 10);
-
-
-        carry = ((mult / 10) + (resNode.getData() / 10));
-        resNode.setData(resNode.getData() % 10);
-
-        list1Node = list1Node.getNext();
-        resNode = resNode.getNext();
-    }
-    if (carry > 0) {
-    resNode.setData(resNode.getData() + carry); }
-    resNode = resNode.getNext();
-    list2Node = list2Node.getNext();
-
-    result = result.flip();
-    list1 = list1.flip();
-    list2 = list2.flip();
-
-
-    Node start = result.getTop();
-    while (start.getData() == 0) {
-        result.setTop(start.getNext());
-        start = start.getNext();
-    }
-    return result;
-}
-
- */
-
+/* //outdated code, improved version made and used
     public static long multiplyLists(LinkedList list0, LinkedList list1) {
         LinkedList temp0 = list0.flip();
         LinkedList temp1 = list1.flip();
@@ -256,32 +200,27 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         return (((number1 % N) * (number2 % N)) % N);
     }
 
+ */
+
     public static String multiplyLists_test(LinkedList list1, LinkedList list0) {
         LinkedList temp_list0 = list0.flip();
         LinkedList temp_list1 = list1.flip();
-        System.out.println("test");
 
-        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
+        BigInteger N = new BigInteger("5836090530224727663398555102196101238110440949348712473760677766722525717734801063298409008551326821");
         BigInteger number1 = new BigInteger("0");
         BigInteger number2 = new BigInteger("0");
 
         while (!temp_list0.is_empty() || !temp_list1.is_empty())
         {
-            System.out.println("test");
             if(!temp_list0.is_empty())
             {
-
                 BigInteger temp_0 = number1.multiply(BigInteger.valueOf(10));
                 BigInteger temp_node = BigInteger.valueOf(temp_list0.pop().getData());
                 BigInteger temp_0_into_mod = temp_0.mod(N);
                 number1 = temp_0_into_mod.add(temp_node);
 
-
-
-//                number1 = (  (  (number1) * 10) % N + temp0.pop().getData()  );
                 temp_list0.getNext();
             }
-
             if(!temp_list1.is_empty())
             {
                 BigInteger temp_0 = number2.multiply(BigInteger.valueOf(10));
@@ -303,34 +242,8 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
 //        System.out.println("Result stored as BigInteger");
         return res.toString();
     }
-//    public static String expoLists_test(int num1, int num2) {
-//
-//        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
-//        BigInteger number1 = new BigInteger("0");
-//        BigInteger number2 = new BigInteger("0");
-//
-//        BigInteger result = new BigInteger("0");
-//
-//        if (number1.equals(BigInteger.valueOf(0)))
-//            result = BigInteger.valueOf(1);
-//        if (number1.equals(BigInteger.valueOf(1)))
-//            result = number1.mod(N);
-//        BigInteger num = expoLists_test(BigInteger.valueOf(number1), BigInteger.valueOf(number2.divide((2)))); //you can see the issue here, idk how to convert this
-//        num = (num.multiply(num)).mod(N);
-//        //if exponent is even
-//        if (number2.mod(BigInteger.valueOf(2)).equals(0)) {
-//            result = num;
-//        }
-//        //if exponent is odd
-//        else {
-//            result = (((number1.mod(N)).multiply(num).mod(N)));
-//        }
-//
-//        System.out.println("Result stored as BigInteger");
-//        return result.toString();
-//    }
 
-
+/* //outdated code, better version implemented
     public static long expoLists(int num1, int num2) {
         //System.out.print(list1.toString());
         long N = 8717861568456214667l; //prime mod number
@@ -355,9 +268,11 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         }
     }
 
+ */
+
     public static String expoLists_1(String num1, String num2) {
         //System.out.print(list1.toString());
-        BigInteger N = new BigInteger("1000000000000000000000000000000000000000000000000000000000007");
+        BigInteger N = new BigInteger("5836090530224727663398555102196101238110440949348712473760677766722525717734801063298409008551326821");
 //        long N = 8717861568456214667l; //prime mod number
 //        BigInteger number1 = BigDecimal.valueOf(num1).toBigInteger();
 //        BigInteger number2 = BigDecimal.valueOf(num2).toBigInteger();
@@ -412,7 +327,4 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
         }
 
     }
-
-
-
 }// End of class

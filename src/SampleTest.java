@@ -101,8 +101,8 @@ public class SampleTest {
         test_list_1.push(4);
         test_list_1.push(2);
 
-        long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
-        assertEquals(29022, res);
+        String res = FileProcessor.multiplyLists_test(test_list_0, test_list_1);
+        assertEquals("29022", res);
 
     }
 
@@ -166,8 +166,8 @@ public class SampleTest {
         assertEquals(test_list_0.peek(), 6);
         test_list_1.push(4);
 
-        long res = FileProcessor.multiplyLists(test_list_0, test_list_1);
-        assertEquals(24, res);
+        String res = FileProcessor.multiplyLists_test(test_list_0, test_list_1);
+        assertEquals("24", res);
 
     }
 
@@ -275,8 +275,9 @@ public class SampleTest {
 
     @Test
     public void testExpoLists2(){
-        long res = FileProcessor.expoLists(30, 5);
-        assertEquals(24300000, res);
+        String res = FileProcessor.expoLists_1("30", "5");
+
+        assertEquals("24300000", res);
 
     }
 
