@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -299,42 +300,47 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
 
 //        return (((number1 % N) * (number2 % N)) % N);
 
-        System.out.println("Result stored as BigInteger");
+//        System.out.println("Result stored as BigInteger");
         return res.toString();
     }
-    public static String expoLists_test(int num1, int num2) {
+//    public static String expoLists_test(int num1, int num2) {
+//
+//        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
+//        BigInteger number1 = new BigInteger("0");
+//        BigInteger number2 = new BigInteger("0");
+//
+//        BigInteger result = new BigInteger("0");
+//
+//        if (number1.equals(BigInteger.valueOf(0)))
+//            result = BigInteger.valueOf(1);
+//        if (number1.equals(BigInteger.valueOf(1)))
+//            result = number1.mod(N);
+//        BigInteger num = expoLists_test(BigInteger.valueOf(number1), BigInteger.valueOf(number2.divide((2)))); //you can see the issue here, idk how to convert this
+//        num = (num.multiply(num)).mod(N);
+//        //if exponent is even
+//        if (number2.mod(BigInteger.valueOf(2)).equals(0)) {
+//            result = num;
+//        }
+//        //if exponent is odd
+//        else {
+//            result = (((number1.mod(N)).multiply(num).mod(N)));
+//        }
+//
+//        System.out.println("Result stored as BigInteger");
+//        return result.toString();
+//    }
 
-        BigInteger N = new BigInteger("10000000000000000000000000000000000000121");
-        BigInteger number1 = new BigInteger("0");
-        BigInteger number2 = new BigInteger("0");
 
-        BigInteger result = new BigInteger("0");
-
-        if (number1.equals(BigInteger.valueOf(0)))
-            result = BigInteger.valueOf(1);
-        if (number1.equals(BigInteger.valueOf(1)))
-            result = number1.mod(N);
-        BigInteger num = expoLists_test(BigInteger.valueOf(number1), BigInteger.valueOf(number2.divide((2)))); //you can see the issue here, idk how to convert this
-        num = (num.multiply(num)).mod(N);
-        //if exponent is even
-        if (number2.mod(BigInteger.valueOf(2)).equals(0)) {
-            result = num;
-        }
-        //if exponent is odd
-        else {
-            result = (((number1.mod(N)).multiply(num).mod(N)));
-        }
-
-        System.out.println("Result stored as BigInteger");
-        return result.toString();
-    }
     public static long expoLists(int num1, int num2) {
         //System.out.print(list1.toString());
         long N = 8717861568456214667l; //prime mod number
         if (num1 == 0)
             return 1;
-        if (num2 == 1)
+        if (num2 == 1){
+
             return num1 % N;
+        }
+
         long num = expoLists(num1, num2 / 2);
         num = (num * num) % N;
         //if exponent is even
@@ -348,4 +354,65 @@ public static LinkedList multiList2(LinkedList list1, LinkedList list2) {
             return ((long) ((num1 % N) * num) % N);
         }
     }
+
+    public static String expoLists_1(String num1, String num2) {
+        //System.out.print(list1.toString());
+        BigInteger N = new BigInteger("1000000000000000000000000000000000000000000000000000000000007");
+//        long N = 8717861568456214667l; //prime mod number
+//        BigInteger number1 = BigDecimal.valueOf(num1).toBigInteger();
+//        BigInteger number2 = BigDecimal.valueOf(num2).toBigInteger();
+        BigInteger number1 = new BigInteger(num1);
+        BigInteger number2 = new BigInteger(num2);
+
+//        BigInteger number1 = new BigInteger(temp);
+//        BigInteger number2 = new BigInteger(String.valueOf(num2));
+        BigInteger result = new BigInteger("0");
+
+        if (number1.equals(BigInteger.valueOf(0)))
+            return "1";
+        if (number2.equals(BigInteger.valueOf(1))){
+            result = number1.mod(N);
+            return result.toString();
+        }
+        BigInteger rand = new BigInteger("2");
+        BigInteger temppp = number2.divide(rand);
+
+        String temp_string = number1.toString();
+        String temp_string_1= temppp.toString();
+
+        String brrrrrrrrr = expoLists_1(num1, temppp.toString());
+        BigInteger temp_0 = new BigInteger(brrrrrrrrr);
+
+//        BigInteger temp_0 = new BigInteger(expoLists_1(temp_string, temp_string_1));
+
+//
+//         temp_0 = expoLists_1(number1.toString(), temppp.toString());
+
+//        long num = expoLists(num1, num2 / 2);
+
+        temp_0 = (temp_0.multiply(temp_0));
+        temp_0 = temp_0.mod(N);
+//        num = (num * num) % N;
+//        if exponent is even
+
+
+        if (number2.doubleValue() % 2 == 0) {
+            //System.out.println(num); //for testing purposes
+            return temp_0.toString();
+//            return num;
+        }
+        //if exponent is odd
+        else {
+            //System.out.println(((long) ((num1 % N) * num) % N)); //for testing purposes
+            result = number1.mod(N);
+            result = result.multiply(temp_0);
+            result = result.mod(N);
+            return result.toString();
+//            return ((long) ((num1 % N) * num) % N);
+        }
+
+    }
+
+
+
 }// End of class

@@ -268,8 +268,8 @@ public class SampleTest {
     }
     @Test
     public void testExpoLists1(){
-        long res = FileProcessor.expoLists(6, 4);
-        assertEquals(1296, res);
+        String res = FileProcessor.expoLists_1("6", "4");
+        assertEquals("1296", res);
 
     }
 
@@ -282,20 +282,20 @@ public class SampleTest {
 
     @Test
     public void testExpoLists3(){
-        long res = FileProcessor.expoLists(235, 4);
-        assertEquals("3049800625", Long.toString(res));
+        String res = FileProcessor.expoLists_1("235", "4");
+        assertEquals("3049800625", res);
 
     }
     @Test
     public void testExpoLists4(){
-        long res = FileProcessor.expoLists(0, 4);
-        assertEquals(1, res);
+        String res = FileProcessor.expoLists_1("0", "4");
+        assertEquals("1", res);
 
     }
     @Test
     public void testExpoLists5(){
-        long res = FileProcessor.expoLists(10, 50);
-        assertEquals("100000000000000000000000000000000000000000000000000", Long.toString(res));
+        String res = FileProcessor.expoLists_1("10", "50");
+        assertEquals("100000000000000000000000000000000000000000000000000", res);
 
     }
 
